@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +20,54 @@
   <meta name="twitter:description" content="Challenge your knowledge with trivia from Star Wars, Stranger Things, God of War, Resident Evil, WWE, and more. Play free now.">
 
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f4f4f4; color: #333; }
-    header { background: #222; color: #fff; padding: 20px 0; text-align: center; }
-    .container { padding: 20px; max-width: 900px; margin: auto; background: white; }
+    :root {
+      --bg: #f4f4f4;
+      --card: #ffffff;
+      --ink: #333333;
+      --muted: #777777;
+      --primary: #007BFF;
+      --promo-accent: #ecf3ff;
+      --promo-border: #cfe2ff;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: var(--bg); color: var(--ink); }
+    header { background: #222; color: #fff; padding: 24px 0; text-align: center; }
+    header h1 { margin: 0 0 6px; font-size: 28px; }
+    header p { margin: 0; opacity: 0.9; }
+    .container { padding: 20px; max-width: 900px; margin: auto; }
+    .card { background: var(--card); border: 1px solid #eee; border-radius: 10px; padding: 18px 20px; }
     h1, h2 { color: #222; }
-    .cta { display: inline-block; background: #007BFF; color: white; padding: 12px 24px; margin: 20px 0; text-decoration: none; border-radius: 5px; }
-    footer { text-align: center; font-size: 0.9em; color: #777; padding: 20px; }
+    .cta { display: inline-block; background: var(--primary); color: white; padding: 12px 24px; margin: 20px 0; text-decoration: none; border-radius: 6px; font-weight: 700; }
+    .cta:focus, .cta:hover { filter: brightness(0.95); }
+    footer { text-align: center; font-size: 0.9em; color: var(--muted); padding: 24px; }
+
     ul { margin-left: 20px; }
+
+    /* PROMO styles (prominent at top) */
+    .promo { 
+      background: var(--promo-accent);
+      border: 2px solid var(--promo-border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 0 0 20px;
+    }
+    .promo h2 { margin-top: 0; margin-bottom: 10px; }
+    .promo ul { margin: 10px 0 12px 20px; }
+    .promo blockquote {
+      margin: 10px 0 0;
+      padding-left: 12px;
+      border-left: 3px solid #bfd6ff;
+      color: #4a4a4a;
+    }
+    .promo .mini-cta {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--primary);
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
@@ -37,39 +77,76 @@
   </header>
 
   <div class="container">
-    <h2>🎯 About the Game</h2>
-    <p>Trivia Gauntlet is a fast-paced trivia game where you can test your knowledge across your favorite franchises and categories.</p>
-    <p>Whether you're looking for <strong>TV trivia</strong>, <strong>Harry Potter quiz questions</strong>, or a <strong>Sport quiz </strong>, this is the place to play.</p>
 
-    <a href="https://trivia-5pja.onrender.com/" class="cta" target="_blank">Play Now</a>
+    <!-- Custom Trivia Pack Promo (PROMINENT, TOP OF PAGE) -->
+    <section class="promo card" id="custom-trivia-pack">
+      <h2>📢 GET YOUR CUSTOM TRIVIA PACK</h2>
 
-    <h2>📚 Categories You Can Play</h2>
-    <ul>
-      <li><strong>Sports:</strong> MMA, WWE, NBA, NFL, Soccer – </li>
-      <li><strong>TV Shows:</strong> Friends, The Office, Naruto, Marvel, Attack on Titan, DC Universe, Lord of the Rings, Star Wars, Game of Thrones, Breaking Bad, Stranger Things, Money Heist, and more</li>
-      <li><strong>Games:</strong> Ghost of Tsushima, Elden Ring, God of War, The Last of Us, Resident Evil – story, characters, and boss trivia</li>
-      <li><strong>Books:</strong> Harry Potter – full series coverage with deep lore, quotes, and Hogwarts knowledge</li>
-      <li><strong>Music:</strong> Global music legends, lyrics, genres, and awards</li>
-      <li><strong>General Knowledge:</strong> World facts, geography, science, history, and pop culture</li>
-    </ul>
-    <p><em>More franchises added regularly. Play trivia from your favorite worlds now.</em></p>
+      <ul>
+        <li><strong>Custom Trivia Packs</strong><br>
+          Get themed questions for your favorite shows, books, or topics — fully playable in this format.
+        </li>
+        <li><strong>Personalized Quizzes</strong><br>
+          Send your notes, textbook, or slides — I’ll turn them into a ready-to-play quiz experience.
+        </li>
+        <li><strong>Rapid Game or App Prototypes</strong><br>
+          Have an idea? I build quick, functional prototypes for creators, startups, and indie projects.
+        </li>
+      </ul>
 
-    <h2>🧠 Game Features</h2>
-    <ul>
-      <li>30-second timer per question</li>
-      <li>Difficulty modes: Easy, Hard, and Mixed</li>
-      <li>Lifelines: 50:50 and Call-a-Friend</li>
-      <li>Streak bonus system to recover lifelines</li>
-      <li>One-game perks like unlimited hints or disabling timer</li>
-    </ul>
+      <p>📩 <strong>Reach out:</strong> <a href="mailto:triviaking2025@gmail.com">Contact me ↗</a></p>
 
-    <p style="margin-top: 30px;">Coming soon on the <strong>Google Play Store</strong> – Android only (iOS later).</p>
-    <p>Hosted on GitHub Pages. Lightweight, fast, and mobile-friendly.</p>
+      <blockquote>
+        Open to collaborations, commissions, and creative experiments.<br>
+        If you’ve got an idea — let’s make it real.
+      </blockquote>
+    </section>
+
+    <!-- About -->
+    <section class="card" style="margin-top:20px;">
+      <h2>🎯 About the Game</h2>
+      <p>Trivia Gauntlet is a fast-paced trivia game where you can test your knowledge across your favorite franchises and categories.</p>
+      <p>Whether you're looking for <strong>TV trivia</strong>, <strong>Harry Potter quiz questions</strong>, or a <strong>Sport quiz</strong>, this is the place to play.</p>
+
+      <a href="https://trivia-5pja.onrender.com/" class="cta" target="_blank" rel="noopener">Play Now</a>
+    </section>
+
+    <!-- Categories -->
+    <section class="card" style="margin-top:20px;">
+      <h2>📚 Categories You Can Play</h2>
+      <ul>
+        <li><strong>Sports:</strong> MMA, WWE, NBA, NFL, Soccer – </li>
+        <li><strong>TV Shows:</strong> Friends, The Office, Naruto, Marvel, Attack on Titan, DC Universe, Lord of the Rings, Star Wars, Game of Thrones, Breaking Bad, Stranger Things, Money Heist, and more</li>
+        <li><strong>Games:</strong> Ghost of Tsushima, Elden Ring, God of War, The Last of Us, Resident Evil – story, characters, and boss trivia</li>
+        <li><strong>Books:</strong> Harry Potter – full series coverage with deep lore, quotes, and Hogwarts knowledge</li>
+        <li><strong>Music:</strong> Global music legends, lyrics, genres, and awards</li>
+        <li><strong>General Knowledge:</strong> World facts, geography, science, history, and pop culture</li>
+      </ul>
+      <p><em>More franchises added regularly. Play trivia from your favorite worlds now.</em></p>
+    </section>
+
+    <!-- Features -->
+    <section class="card" style="margin-top:20px;">
+      <h2>🧠 Game Features</h2>
+      <ul>
+        <li>30-second timer per question</li>
+        <li>Difficulty modes: Easy, Hard, and Mixed</li>
+        <li>Lifelines: 50:50 and Call-a-Friend</li>
+        <li>Streak bonus system to recover lifelines</li>
+        <li>One-game perks like unlimited hints or disabling timer</li>
+      </ul>
+
+      <p style="margin-top: 10px;">Coming soon on the <strong>Google Play Store</strong> – Android only (iOS later).</p>
+      <p>Hosted on GitHub Pages. Lightweight, fast, and mobile-friendly.</p>
+    </section>
+
   </div>
 
   <footer>
     &copy; 2025 Trivia Gauntlet. All rights reserved.
   </footer>
+
+  <!-- Mailchimp -->
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/fc3df756d80467902a7cb86ee/d4c2422b41c04bd1bcf465c40.js");</script>
 </body>
 </html>
