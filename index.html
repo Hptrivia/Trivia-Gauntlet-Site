@@ -34,39 +34,51 @@
     header { background: #222; color: #fff; padding: 24px 0; text-align: center; }
     header h1 { margin: 0 0 6px; font-size: 28px; }
     header p { margin: 0; opacity: 0.9; }
+
     .container { padding: 20px; max-width: 900px; margin: auto; }
     .card { background: var(--card); border: 1px solid #eee; border-radius: 10px; padding: 18px 20px; }
+
     h1, h2 { color: #222; }
     .cta { display: inline-block; background: var(--primary); color: white; padding: 12px 24px; margin: 20px 0; text-decoration: none; border-radius: 6px; font-weight: 700; }
     .cta:focus, .cta:hover { filter: brightness(0.95); }
     footer { text-align: center; font-size: 0.9em; color: var(--muted); padding: 24px; }
-
     ul { margin-left: 20px; }
 
-    /* PROMO styles (prominent at top) */
-    .promo { 
+    /* Collapsible promo */
+    details.promo { margin: 0 0 16px; }
+    summary.promo-summary {
       background: var(--promo-accent);
       border: 2px solid var(--promo-border);
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin: 0 0 20px;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
     }
-    .promo h2 { margin-top: 0; margin-bottom: 10px; }
-    .promo ul { margin: 10px 0 12px 20px; }
-    .promo blockquote {
+    /* hide default marker */
+    summary.promo-summary::-webkit-details-marker { display: none; }
+    /* custom chevron */
+    summary.promo-summary::after {
+      content: "▸";
+      font-size: 18px;
+      line-height: 1;
+      margin-left: 10px;
+      transform: translateY(1px);
+    }
+    details[open] > summary.promo-summary::after { content: "▾"; }
+
+    .promo-content { margin-top: 12px; }
+    .promo-content .card { margin: 0; }
+    .promo-content blockquote {
       margin: 10px 0 0;
       padding-left: 12px;
       border-left: 3px solid #bfd6ff;
       color: #4a4a4a;
-    }
-    .promo .mini-cta {
-      display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      border: 1px solid var(--primary);
-      padding: 8px 12px;
-      border-radius: 6px;
     }
   </style>
 </head>
@@ -78,29 +90,32 @@
 
   <div class="container">
 
-    <!-- Custom Trivia Pack Promo (PROMINENT, TOP OF PAGE) -->
-    <section class="promo card" id="custom-trivia-pack">
-      <h2>📢 GET YOUR CUSTOM TRIVIA PACK</h2>
+    <!-- Collapsible Custom Trivia Pack (single-line closed; click to expand) -->
+    <details class="promo" id="custom-trivia-pack">
+      <summary class="promo-summary">📢 GET YOUR CUSTOM TRIVIA PACK</summary>
+      <div class="promo-content">
+        <section class="card">
+          <ul>
+            <li><strong>Custom Trivia Packs</strong><br>
+              Get themed questions for your favorite shows, books, or topics — fully playable in this format.
+            </li>
+            <li><strong>Personalized Quizzes</strong><br>
+              Send your notes, textbook, or slides — I’ll turn them into a ready-to-play quiz experience.
+            </li>
+            <li><strong>Rapid Game or App Prototypes</strong><br>
+              Have an idea? I build quick, functional prototypes for creators, startups, and indie projects.
+            </li>
+          </ul>
 
-      <ul>
-        <li><strong>Custom Trivia Packs</strong><br>
-          Get themed questions for your favorite shows, books, or topics — fully playable in this format.
-        </li>
-        <li><strong>Personalized Quizzes</strong><br>
-          Send your notes, textbook, or slides — I’ll turn them into a ready-to-play quiz experience.
-        </li>
-        <li><strong>Rapid Game or App Prototypes</strong><br>
-          Have an idea? I build quick, functional prototypes for creators, startups, and indie projects.
-        </li>
-      </ul>
+          <p>📩 <strong>Reach out:</strong> <a href="mailto:triviaking2025@gmail.com">Contact me ↗</a></p>
 
-      <p>📩 <strong>Reach out:</strong> <a href="mailto:triviaking2025@gmail.com">Contact me ↗</a></p>
-
-      <blockquote>
-        Open to collaborations, commissions, and creative experiments.<br>
-        If you’ve got an idea — let’s make it real.
-      </blockquote>
-    </section>
+          <blockquote>
+            Open to collaborations, commissions, and creative experiments.<br>
+            If you’ve got an idea — let’s make it real.
+          </blockquote>
+        </section>
+      </div>
+    </details>
 
     <!-- About -->
     <section class="card" style="margin-top:20px;">
