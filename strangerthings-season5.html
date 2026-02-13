@@ -1,128 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stranger Things Season 5 Trivia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Things Season 5 Trivia</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0b0f1a;
-    color: white;
-    text-align: center;
-}
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --card: #ffffff;
+      --ink: #333333;
+      --muted: #777777;
+      --primary: #007BFF;
+      --promo-accent: #ecf3ff;
+      --promo-border: #cfe2ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 24px 0;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; font-size: 28px; }
+    header p { margin: 0; opacity: 0.9; }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+    .container { padding: 20px; max-width: 900px; margin: auto; }
+    .card {
+      background: var(--card);
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
 
-h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
+    h1, h2 { color: #222; margin-top: 0; }
+    .subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
 
-.subtitle {
-    font-size: 18px;
-    color: #cccccc;
-    margin-bottom: 30px;
-}
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      margin: 14px 0 0;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .cta:focus, .cta:hover { filter: brightness(0.95); }
 
-.play-btn {
-    display: inline-block;
-    background: #e50914;
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-bottom: 40px;
-}
+    .section { margin-top: 20px; }
 
-.play-btn:hover {
-    background: #ff1f2f;
-}
+    /* Sample question styling (kept content the same, only visual) */
+    .sample-question {
+      background: #f7f7f7;
+      border: 1px solid #eee;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+    .sample-question h3 { margin: 0 0 8px; color: #222; }
+    .sample-question p { margin: 0; color: #333; }
 
-.section {
-    margin-top: 40px;
-}
-
-.sample-question {
-    background: #141a2e;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.sample-question h3 {
-    margin-top: 0;
-}
-
-.footer {
-    margin-top: 60px;
-    font-size: 14px;
-    color: #777;
-}
-</style>
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: var(--muted);
+      padding: 24px;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Same overall header style as your main GitHub page -->
+  <header>
+    <h1>Trivia Gauntlet</h1>
+    <p>Stranger Things Season 5 Trivia</p>
+  </header>
 
-<div class="container">
+  <div class="container">
 
-    <h1>Stranger Things Season 5 Trivia</h1>
-    <p class="subtitle">
+    <!-- Your Season 5 text: unchanged -->
+    <section class="card" style="margin-top:20px;">
+      <h1>Stranger Things Season 5 Trivia</h1>
+      <p class="subtitle">
         88 Questions • Varying Difficulty • Test Your Knowledge of Hawkins’ Final Chapter
-    </p>
+      </p>
 
-    <a href="https://www.triviagauntlet.app/" class="play-btn">Play Now</a>
+      <a href="https://www.triviagauntlet.app/" class="cta" target="_blank" rel="noopener">Play Now</a>
+    </section>
 
-    <div class="section">
-        <h2>Try a Few Sample Questions</h2>
+    <section class="card section">
+      <h2>Try a Few Sample Questions</h2>
 
-        <div class="sample-question">
-            <h3>1. What military unit is first shown entering Hawkins?</h3>
-               A) Task Force Echo<br>
-               B) Project Nightfall<br>
-               C) Wolfpack Unit<br>
-               D) Operation Redline</p>
-        </div>
+      <div class="sample-question">
+        <h3>1. What military unit is first shown entering Hawkins?</h3>
+        <p>A) Task Force Echo<br>
+           B) Project Nightfall<br>
+           C) Wolfpack Unit<br>
+           D) Operation Redline</p>
+      </div>
 
-        <div class="sample-question">
-            <h3>2. What does Dustin call the energy holding the barrier together?</h3>
-               A) Dark Flux<br>
-               B) Exotic Matter<br>
-               C) Shadow Field<br>
-               D) Rift Energy</p>
-        </div>
+      <div class="sample-question">
+        <h3>2. What does Dustin call the energy holding the barrier together?</h3>
+        <p>A) Dark Flux<br>
+           B) Exotic Matter<br>
+           C) Shadow Field<br>
+           D) Rift Energy</p>
+      </div>
 
-        <div class="sample-question">
-            <h3>3. Where is Hopper offered a new chief position?</h3>
-               A) Chicago<br>
-               B) Montauk<br>
-               C) Boston<br>
-               D) Denver</p>
-        </div>
+      <div class="sample-question">
+        <h3>3. Where is Hopper offered a new chief position?</h3>
+        <p>A) Chicago<br>
+           B) Montauk<br>
+           C) Boston<br>
+           D) Denver</p>
+      </div>
+    </section>
 
-    </div>
+    <section class="card section">
+      <h2>Want the Full Pack?</h2>
+      <p>
+        Unlock the complete 88-question Season 5 pack and challenge yourself in full quiz mode.
+      </p>
+      <a href="https://ko-fi.com/s/121bb1fbfd" class="cta" target="_blank" rel="noopener">Get Full Pack – €2</a>
+    </section>
 
-    <div class="section">
-        <h2>Want the Full Pack?</h2>
-        <p>
-        Unlock the complete 232-question Season 1-5 pack and challenge yourself in full quiz mode.
-        </p>
-        <a href="https://ko-fi.com/s/121bb1fbfd" class="play-btn">Get Full Pack – €2</a>
-    </div>
+  </div>
 
-    <div class="footer">
-        Unofficial fan-made trivia experience.
-    </div>
-
-</div>
-
+  <!-- Your footer text: unchanged -->
+  <footer>
+    Unofficial fan-made trivia experience.
+  </footer>
 </body>
 </html>
+
