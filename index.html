@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Trivia Gauntlet – Play Quizzes on Sports, Movies, TV shows, Music & More</title>
+  <title>Trivia Gauntlet – Play Quizzes on Sports, Movies, TV Shows, Music & More</title>
   <meta name="google-site-verification" content="TuB0QWBNwlv1vW8WKaJlKO-bkKBdsc5O7kGPj7AKLbU" />
-  <meta name="description" content="Play Trivia Gauntlet – the ultimate free trivia game featuring quizzes on UFC, Ghost of Tsushima, Naruto, Star Wars, Harry Potter, Elden Ring, and more. With lifelines, streak bonuses, and categories like sports, games, books, and TV.">
+  <meta name="description" content="Download Trivia Gauntlet – 160+ themes across TV, movies, anime, games, sports, books and music, with 10 game modes including marathon, survival, daily challenges, word search and wordle. Free on iOS and Android.">
 
   <!-- Open Graph Metadata -->
-  <meta property="og:title" content="Trivia Gauntlet – Quiz Game for Sports, Games, Books, TV">
-  <meta property="og:description" content="Trivia Gauntlet offers trivia challenges across Games, Sports, TV Series, Movies, Books and more.">
+  <meta property="og:title" content="Trivia Gauntlet – The Trivia Game for Every Fandom">
+  <meta property="og:description" content="160+ themes and 10 game modes. Test your knowledge on TV, anime, games, sports, books and more. Download free on iOS and Android.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://your-username.github.io/trivia-gauntlet-site/">
+  <meta property="og:url" content="https://hptrivia.github.io/Trivia-Gauntlet-Site/">
 
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Trivia Gauntlet – Quiz Game for All Fandoms">
-  <meta name="twitter:description" content="Challenge your knowledge with trivia from Star Wars, Stranger Things, God of War, Resident Evil, WWE, and more. Play free now.">
+  <meta name="twitter:description" content="Challenge your knowledge with trivia from Star Wars, Stranger Things, God of War, Naruto, the UFC, and 160+ more. Download free.">
 
   <style>
     :root {
@@ -31,9 +31,17 @@
     }
     * { box-sizing: border-box; }
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: var(--bg); color: var(--ink); }
-    header { background: #222; color: #fff; padding: 24px 0; text-align: center; }
-    header h1 { margin: 0 0 6px; font-size: 28px; }
-    header p { margin: 0; opacity: 0.9; }
+    header { background: #222; color: #fff; padding: 32px 0 28px; text-align: center; }
+    header h1 { margin: 0 0 6px; font-size: 30px; }
+    header p { margin: 0 0 22px; opacity: 0.9; font-size: 16px; }
+
+    .store-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; padding: 0 16px; }
+    .store-btn { display: inline-flex; align-items: center; gap: 10px; background: #000; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 10px; border: 1px solid #444; min-width: 200px; justify-content: center; }
+    .store-btn:hover { background: #111; }
+    .store-btn .sb-icon { font-size: 26px; line-height: 1; }
+    .store-btn .sb-text { text-align: left; line-height: 1.2; }
+    .store-btn .sb-small { display: block; font-size: 11px; opacity: 0.85; }
+    .store-btn .sb-big { display: block; font-size: 18px; font-weight: 700; }
 
     .container { padding: 20px; max-width: 900px; margin: auto; }
     .card { background: var(--card); border: 1px solid #eee; border-radius: 10px; padding: 18px 20px; }
@@ -41,51 +49,30 @@
     h1, h2 { color: #222; }
     .cta { display: inline-block; background: var(--primary); color: white; padding: 12px 24px; margin: 20px 0; text-decoration: none; border-radius: 6px; font-weight: 700; }
     .cta:focus, .cta:hover { filter: brightness(0.95); }
+    .play-btn { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .play-btn:hover { text-decoration: underline; }
     footer { text-align: center; font-size: 0.9em; color: var(--muted); padding: 24px; }
     ul { margin-left: 20px; }
 
-    /* Collapsible promo */
-    details.promo { margin: 0 0 16px; }
-    summary.promo-summary {
-      background: var(--promo-accent);
-      border: 2px solid var(--promo-border);
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-weight: 800;
-      letter-spacing: 0.3px;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      user-select: none;
-    }
-    /* hide default marker */
-    summary.promo-summary::-webkit-details-marker { display: none; }
-    /* custom chevron */
-    summary.promo-summary::after {
-      content: "▸";
-      font-size: 18px;
-      line-height: 1;
-      margin-left: 10px;
-      transform: translateY(1px);
-    }
-    details[open] > summary.promo-summary::after { content: "▾"; }
-
-    .promo-content { margin-top: 12px; }
-    .promo-content .card { margin: 0; }
-    .promo-content blockquote {
-      margin: 10px 0 0;
-      padding-left: 12px;
-      border-left: 3px solid #bfd6ff;
-      color: #4a4a4a;
-    }
+    .download-strip { background: var(--promo-accent); border: 2px solid var(--promo-border); border-radius: 10px; padding: 16px 18px; text-align: center; margin-top: 20px; }
+    .download-strip h2 { margin: 0 0 6px; }
+    .download-strip p { margin: 0 0 14px; color: #4a4a4a; }
   </style>
 </head>
 <body>
   <header>
     <h1>Trivia Gauntlet</h1>
-    <p>Play Trivia – Sport, TV, Games, Music, and More</p>
+    <p>The trivia game for every fandom — 160+ themes, 10 game modes, all free.</p>
+    <div class="store-buttons">
+      <a class="store-btn" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
+        <span class="sb-icon"></span>
+        <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
+      </a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
+        <span class="sb-icon">▶</span>
+        <span class="sb-text"><span class="sb-small">Get it on</span><span class="sb-big">Google Play</span></span>
+      </a>
+    </div>
   </header>
 
   <div class="container">
@@ -93,87 +80,98 @@
     <!-- About -->
     <section class="card" style="margin-top:20px;">
       <h2>🎯 About the Game</h2>
-      <p>Trivia Gauntlet is a fast-paced trivia game where you can test your knowledge across your favorite franchises and categories.</p>
-      <p>Whether you're looking for <strong>TV trivia</strong>, <strong>Harry Potter quiz questions</strong>, or a <strong>Sport quiz</strong>, this is the place to play.</p>
-      <a href="https://triviagauntlet.app/" class="cta" target="_blank" rel="noopener">Play Now</a>
-    <!-- Recently Added -->
-    <section class="card" style="margin-top:20px;">
-      <h2>🆕 Recently Added</h2>
-      <ul style="list-style:none; padding-left:0; margin:0;">
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/strangerthings-season5-trivia.html" class="play-btn">
-            Stranger Things Season 5 Trivia
-          </a>
-        </li>
-    
-        <!-- Add more links like this -->
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/ted-lasso-trivia.html" class="play-btn">Ted Lasso</a>
-        </li>
-
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/arcane-trivia.html" class="play-btn">Arcane</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/iasip-trivia.html" class="play-btn">IASIP</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/true-blood-trivia.html" class="play-btn">True Blood</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/the-vampire-diaries-trivia.html" class="play-btn">The Vampire Diaries</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/severance-trivia.html" class="play-btn">Severance</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/succession-trivia.html" class="play-btn">Succession</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/supernatural-trivia.html" class="play-btn">Supernatural</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/rick-and-morty-trivia.html" class="play-btn">Rick and Morty</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/mad-men-trivia.html" class="play-btn">Mad Men</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/the-witcher-3-trivia.html" class="play-btn">The Witcher 3</a>
-        </li>
-        <li style="margin:10px 0;">
-          <a href="https://hptrivia.github.io/Trivia-Gauntlet-Site/resident-evil-4-trivia.html" class="play-btn">Resident Evil 4</a>
-        </li>
-      </ul>
+      <p><strong>Trivia Gauntlet</strong> is a fast-paced trivia game built for fans. Pick from <strong>160+ themes</strong> across TV, anime, movies, video games, sports, books and music — then put your knowledge to the test across <strong>10 different game modes</strong>.</p>
+      <p>Grind a 30-question marathon on <strong>Harry Potter</strong>, survive a sudden-death run on <strong>Naruto</strong>, race the clock on <strong>UFC</strong> trivia, or mash up five of your favorite shows into one custom quiz. New themes and questions are added regularly.</p>
+      <p>No sign-up needed. Free to download. Jump straight into a quiz.</p>
     </section>
-    <!-- Categories -->
+
+    <!-- Download CTA strip -->
+    <div class="download-strip">
+      <h2>📲 Get the App</h2>
+      <p>Download free on iOS or Android and start playing in seconds.</p>
+      <div class="store-buttons">
+        <a class="store-btn" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
+          <span class="sb-icon"></span>
+          <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
+        </a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
+          <span class="sb-icon">▶</span>
+          <span class="sb-text"><span class="sb-small">Get it on</span><span class="sb-big">Google Play</span></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Game Modes -->
     <section class="card" style="margin-top:20px;">
-      <h2>📚 Categories You Can Play</h2>
+      <h2>🎮 10 Ways to Play</h2>
       <ul>
-        <li><strong>Sports:</strong> MMA, WWE, NBA, NFL, Soccer – </li>
-        <li><strong>TV Shows:</strong> Friends, The Office, Naruto, Marvel, Attack on Titan, DC Universe, Lord of the Rings, Star Wars, Game of Thrones, Breaking Bad, Stranger Things, Money Heist, and more</li>
-        <li><strong>Games:</strong> Ghost of Tsushima, Elden Ring, God of War, The Last of Us, Resident Evil – story, characters, and boss trivia</li>
-        <li><strong>Books:</strong> Harry Potter – full series coverage with deep lore, quotes, and Hogwarts knowledge</li>
-        <li><strong>Music:</strong> Global music legends, lyrics, genres, and awards</li>
-        <li><strong>General Knowledge:</strong> World facts, geography, science, history, and pop culture</li>
+        <li><strong>Marathon:</strong> 30 questions per round — the ultimate test of how well you really know a theme.</li>
+        <li><strong>Challenge:</strong> Quick 10-question rounds, perfect for a fast play on the go.</li>
+        <li><strong>Survival:</strong> Sudden death — one wrong answer and it's over. How long can you last?</li>
+        <li><strong>Mashup:</strong> Combine up to 5 themes into one custom quiz.</li>
+        <li><strong>Episode Quizzes:</strong> Deep-dive trivia for specific episodes of select shows.</li>
+        <li><strong>Versus:</strong> Local multiplayer — pass and play with 2–4 friends, best of 3, 5 or 10.</li>
+        <li><strong>Daily Trivia:</strong> A fresh 10-question mix across themes, every day.</li>
+        <li><strong>Daily Wordle:</strong> One themed 5-letter word a day, 6 guesses.</li>
+        <li><strong>Word Search:</strong> Themed word-search puzzles to hunt and solve.</li>
+        <li><strong>Wordle:</strong> Endless themed word-guessing on your favorite franchises.</li>
       </ul>
-      <p><em>More franchises added regularly. Play trivia from your favorite worlds now.</em></p>
     </section>
 
+    <!-- Categories & Themes -->
+    <section class="card" style="margin-top:20px;">
+      <h2>📚 160+ Themes Across Every Category</h2>
+
+      <p><strong>📺 TV Series (70):</strong> A Knight of the Seven Kingdoms, Arcane, Arrow, Avatar: The Last Airbender, Ben 10, Bones, Breaking Bad, Bridgerton, Buffy the Vampire Slayer, Castle, Criminal Minds, DC Movies, Daredevil, Desperate Housewives, Dexter, Downton Abbey, Euphoria, Family Guy, From, Game of Thrones, Gilmore Girls, Gossip Girl, Grey's Anatomy, Heated Rivalry, House, House of the Dragon, Invincible, Lord of the Rings, Lost, Lucifer, Mad Men, Marvel Movies, Mindhunter, Money Heist, Outlander, Peaky Blinders, Pretty Little Liars, Prison Break, Rick and Morty, Severance, Sex and the City, Shameless, Sons of Anarchy, Spartacus, Squid Game, Star Trek, Star Wars, Stranger Things, Succession, Suits, Supernatural, The Bear, The Boys, The Crown, The Flash, The Mentalist, The Originals, The Pitt, The Sopranos, The Vampire Diaries, The Walking Dead, The White Lotus, The Wire, True Blood, True Detective, Twilight, Twin Peaks, Wednesday, Yellowstone, You.</p>
+
+      <p><strong>😂 Sitcoms (15):</strong> Brooklyn 99, Community, Friends, How I Met Your Mother, It's Always Sunny in Philadelphia, Modern Family, New Girl, Parks and Recreation, Schitt's Creek, Scrubs, Seinfeld, Superstore, Ted Lasso, The Big Bang Theory, The Office.</p>
+
+      <p><strong>🌀 Anime (9):</strong> Attack on Titan, Bleach, Death Note, Demon Slayer, Dragon Ball Z, Fullmetal Alchemist, Jujutsu Kaisen, Naruto, One Piece.</p>
+
+      <p><strong>🎮 Games (23):</strong> Assassin's Creed Valhalla, Baldur's Gate 3, Bloodborne, Clair Obscur: Expedition 33, Cyberpunk 2077, Dark Souls 3, Death Stranding, Demon's Souls, Elden Ring, Final Fantasy, GTA V, Ghost of Tsushima, God of War, Horizon Zero Dawn, Lies of P, Marvel's Spider-Man, Minecraft, Pokémon, Red Dead Redemption 2, Resident Evil 4, Sekiro: Shadows Die Twice, The Last of Us, The Witcher 3.</p>
+
+      <p><strong>🏆 Sports (8):</strong> Boxing, EPL Football, MMA, NBA, NFL, Nigerian Football, WWE, World Football.</p>
+
+      <p><strong>📖 Books (3):</strong> Bible, Harry Potter, Quran.</p>
+
+      <p><strong>🌍 Countries (5):</strong> Australia, Canada, Germany, U.S.A, United Kingdom.</p>
+
+      <p><strong>🎓 Education (10):</strong> Chemistry, Finance &amp; Investing, Health &amp; Medicine, Language, Marketing &amp; Brands, Mathematics, Physics, Spelling, Technology, Word Definitions.</p>
+
+      <p><strong>🧩 General Knowledge (23):</strong> Animals, Anime, Bollywood, Cartoons, Disney, Food &amp; Drink, Fun Facts, Geography, History, Hollywood, Kids, Music, Nigerian Music, Nollywood, Odd One Out, Science, Sports, TV Series, True Crime, True or False, Video Games, World Capitals, World Facts.</p>
+
+      <p><em>New franchises and themes added regularly — your favorite world is probably already in here.</em></p>
+    </section>
 
     <!-- Features -->
     <section class="card" style="margin-top:20px;">
-      <h2>🧠 Game Features</h2>
+      <h2>🧠 Built to Keep You Playing</h2>
       <ul>
-        <li>30-second timer per question</li>
+        <li>30-second timer per question to keep the pressure on</li>
         <li>Difficulty modes: Easy, Hard, and Mixed</li>
         <li>Lifelines: 50:50 and Call-a-Friend</li>
-        <li>Streak bonus system to recover lifelines</li>
-        <li>One-game perks like unlimited hints or disabling timer</li>
+        <li>Streak bonus system that earns back your lifelines</li>
+        <li>One-game perks like unlimited hints or no timer</li>
+        <li>Track your stats, best scores and completion across every theme</li>
+        <li>Lightweight, fast, and easy to play — no account required</li>
       </ul>
-
-      <p>Hosted on GitHub Pages. Lightweight, fast, and mobile-friendly.</p>
     </section>
+
+    <!-- Final CTA -->
+    <div class="download-strip">
+      <h2>Ready to play?</h2>
+      <p>Download Trivia Gauntlet free and find your fandom.</p>
+      <div class="store-buttons">
+        <a class="store-btn" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
+          <span class="sb-icon"></span>
+          <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
+        </a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
+          <span class="sb-icon">▶</span>
+          <span class="sb-text"><span class="sb-small">Get it on</span><span class="sb-big">Google Play</span></span>
+        </a>
+      </div>
+    </div>
 
   </div>
 
@@ -181,6 +179,5 @@
     &copy; 2025 Trivia Gauntlet. All rights reserved.
   </footer>
 
-  
 </body>
 </html>
