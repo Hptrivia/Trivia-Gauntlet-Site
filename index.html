@@ -8,6 +8,15 @@
   <meta name="google-site-verification" content="TuB0QWBNwlv1vW8WKaJlKO-bkKBdsc5O7kGPj7AKLbU" />
   <meta name="description" content="Download Trivia Gauntlet – 160+ themes across TV, movies, anime, games, sports, books and music, with 10 game modes including marathon, survival, daily challenges, word search and wordle. Free on iOS and Android.">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEZDEMJ9SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BEZDEMJ9SV');
+  </script>
+
   <!-- Open Graph Metadata -->
   <meta property="og:title" content="Trivia Gauntlet – The Trivia Game for Every Fandom">
   <meta property="og:description" content="160+ themes and 10 game modes. Test your knowledge on TV, anime, games, sports, books and more. Download free on iOS and Android.">
@@ -63,12 +72,12 @@
   <header>
     <h1>Trivia Gauntlet</h1>
     <p>The trivia game for every fandom — 160+ themes, 10 game modes, all free.</p>
-    <div class="store-buttons">
-      <a class="store-btn" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
+    <div class="store-buttons" data-section="hero">
+      <a class="store-btn" data-store="ios" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
         <span class="sb-icon"></span>
         <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
       </a>
-      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
+      <a class="store-btn" data-store="android" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
         <span class="sb-icon">▶</span>
         <span class="sb-text"><span class="sb-small">Get it on</span><span class="sb-big">Google Play</span></span>
       </a>
@@ -89,12 +98,12 @@
     <div class="download-strip">
       <h2>📲 Get the App</h2>
       <p>Download free on iOS or Android and start playing in seconds.</p>
-      <div class="store-buttons">
-        <a class="store-btn" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
+      <div class="store-buttons" data-section="mid_strip">
+        <a class="store-btn" data-store="ios" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
           <span class="sb-icon"></span>
           <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
         </a>
-        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
+        <a class="store-btn" data-store="android" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
           <span class="sb-icon">▶</span>
           <span class="sb-text"><span class="sb-small">Get it on</span><span class="sb-big">Google Play</span></span>
         </a>
@@ -161,12 +170,12 @@
     <div class="download-strip">
       <h2>Ready to play?</h2>
       <p>Download Trivia Gauntlet free and find your fandom.</p>
-      <div class="store-buttons">
-        <a class="store-btn" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
+      <div class="store-buttons" data-section="final_cta">
+        <a class="store-btn" data-store="ios" href="https://apps.apple.com/app/trivia-gauntlet/id6749189557" target="_blank" rel="noopener">
           <span class="sb-icon"></span>
           <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
         </a>
-        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
+        <a class="store-btn" data-store="android" href="https://play.google.com/store/apps/details?id=com.trivia.trivia_gauntlet" target="_blank" rel="noopener">
           <span class="sb-icon">▶</span>
           <span class="sb-text"><span class="sb-small">Get it on</span><span class="sb-big">Google Play</span></span>
         </a>
@@ -178,6 +187,35 @@
   <footer>
     &copy; 2025 Trivia Gauntlet. All rights reserved.
   </footer>
+
+  <!-- Rewrites the store links per visitor using the utm_source already on THIS
+       page's URL (?utm_source=youtube / tiktok / instagram), then fires a GA4
+       event per tap. One static page, but each store link carries the right
+       campaign tag so App Store Connect / Play Console can attribute installs. -->
+  <script>
+    var APPLE_PROVIDER_TOKEN = 'YOUR_PT_TOKEN'; // from App Store Connect > Analytics > Acquisition > Campaigns
+    var source = new URLSearchParams(location.search).get('utm_source') || 'direct';
+
+    document.querySelectorAll('.store-btn').forEach(function (btn) {
+      var url = new URL(btn.href);
+      if (btn.dataset.store === 'ios') {
+        url.searchParams.set('pt', APPLE_PROVIDER_TOKEN);
+        url.searchParams.set('ct', source);
+        url.searchParams.set('mt', '8');
+      } else if (btn.dataset.store === 'android') {
+        url.searchParams.set('referrer', 'utm_source=' + source + '&utm_medium=social&utm_campaign=bio_link');
+      }
+      btn.href = url.toString();
+
+      btn.addEventListener('click', function () {
+        gtag('event', 'store_click', {
+          store_platform: btn.dataset.store,
+          link_location: btn.closest('[data-section]')?.dataset.section || 'unknown',
+          utm_source: source
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
